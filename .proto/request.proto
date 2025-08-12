@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package cache.v1;
+option go_package = "github.com/auth-service/presentation/grpc/gen/cachev1;cachev1";
+
+service CacheService {
+  rpc SetData(SetRequest) returns (SetReply);
+  rpc GetData(GetRequest) returns (GetReply);
+  rpc DelData(DelRequest) returns (DelReply);
+  rpc HsetSession(SetSession) returns (SetSessionReply);
+  rpc HgetSession(GetSessionRequest) returns (GetSessionReply); 
+}
+
+message SetRequest {
+  string key   = 1;
+  string value = 2;
+}
+
+message SetReply {
+  bool   status  = 1;
+  string message = 2; 
+}
+
+message GetRequest {
+  string key = 1;
+}
+
+message DelRequest {
+  string key = 1;
+}
+
+message DelReply {
+  bool   status  = 1;
+  string message = 2;
+}
+
+message GetReply {
+  bool   status  = 1;
+  string key     = 2;
+  string value   = 3;
+  string message = 4;
+}
+
+message SetSession {
+  string key = 1;
+  string uuid = 2;
+  string session = 3;
+  int64 ttl_seconds = 4;
+}
+
+message SetSessionReply {
+  bool status = 1;
+  string message = 2;
+}
+
+message GetSessionRequest {
+  string key = 1;
+}
+
+message GetSessionReply {
+  bool   status  = 1;
+  string message = 2;
+  string key     = 3;
+  string uuid    = 4;
+  string session = 5;
+}

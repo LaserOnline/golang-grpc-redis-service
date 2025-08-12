@@ -1,0 +1,208 @@
+services:
+  redis-master:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.redis
+    container_name: redis-master
+    hostname: redis-master
+    volumes:
+      - redis-master-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    # ports:
+    #   - "7001:6379"
+    networks:
+      - redis-networks
+
+  redis-slave-1:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.redis
+    container_name: redis-slave-1
+    depends_on:
+      - redis-master
+    volumes:
+      - redis-slave1-data:/data
+    command: >
+      redis-server /usr/local/etc/redis/redis.conf
+      --replicaof redis-master 6379
+      --masterauth "LPWDU3h4drQj6VmHsp^9"
+      --replica-priority 50
+    # ports:
+    #   - "7002:6379"
+    networks:
+      - redis-networks
+
+  redis-slave-2:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.redis
+    container_name: redis-slave-2
+    depends_on:
+      - redis-master
+    volumes:
+      - redis-slave2-data:/data
+    command: >
+      redis-server /usr/local/etc/redis/redis.conf
+      --replicaof redis-master 6379
+      --masterauth "LPWDU3h4drQj6VmHsp^9"
+      --replica-priority 100
+    # ports:
+    #   - "7003:6379"
+    networks:
+      - redis-networks
+
+  redis-slave-3:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.redis
+    container_name: redis-slave-3
+    depends_on:
+      - redis-master
+    volumes:
+      - redis-slave3-data:/data
+    command: >
+      redis-server /usr/local/etc/redis/redis.conf
+      --replicaof redis-master 6379
+      --masterauth "LPWDU3h4drQj6VmHsp^9"
+      --replica-priority 200
+    # ports:
+    #   - "7004:6379"
+    networks:
+      - redis-networks
+
+  redis-slave-4:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.redis
+    container_name: redis-slave-4
+    depends_on:
+      - redis-master
+    volumes:
+      - redis-slave4-data:/data
+    command: >
+      redis-server /usr/local/etc/redis/redis.conf
+      --replicaof redis-master 6379
+      --masterauth "LPWDU3h4drQj6VmHsp^9"
+      --replica-priority 0
+    # ports:
+    #   - "7005:6379"
+    networks:
+      - redis-networks
+
+  redis-sentinel-1:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.sentinel-1
+    container_name: redis-sentinel-1
+    depends_on:
+      redis-master:
+        condition: service_healthy
+    # ports:
+    #   - "26379:26379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "-p", "26379", "PING"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    volumes:
+      - redis-sentinel1-data:/data
+    command: redis-server /data/sentinel.conf --sentinel
+    networks:
+      - redis-networks
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  redis-sentinel-2:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.sentinel-2
+    container_name: redis-sentinel-2
+    depends_on:
+      redis-master:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "redis-cli", "-p", "26380", "PING"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    ports:
+      - "26380:26379"
+    volumes:
+      - redis-sentinel2-data:/data
+    command: redis-server /data/sentinel.conf --sentinel
+    networks:
+      - redis-networks
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  redis-sentinel-3:
+    build:
+      context: ./dockerfile-redis
+      dockerfile: dockerfile.sentinel-3
+    container_name: redis-sentinel-3
+    depends_on:
+      redis-master:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "redis-cli", "-p", "26381", "PING"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    # ports:
+    #   - "26381:26379"
+    volumes:
+      - redis-sentinel3-data:/data
+    command: redis-server /data/sentinel.conf --sentinel
+    networks:
+      - redis-networks
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  redisinsight:
+    container_name: redisinsight
+    image: redislabs/redisinsight:2.66
+    depends_on:
+      - redis-master
+    restart: always
+    ports:
+      - "5540:5540"
+    volumes:
+      - "redisinsight_data:/data"
+    networks:
+      - redis-networks
+  golang-grpc-redis:
+    container_name: golang-grpc-redis
+    build:
+      context: .
+      dockerfile: dockerfile.golang
+    platform: linux/arm64
+    depends_on:
+      redis-sentinel-1:
+        condition: service_healthy
+      redis-sentinel-2:
+        condition: service_healthy
+      redis-sentinel-3:
+        condition: service_healthy
+    networks:
+      - redis-networks
+    ports:
+      - "50051:50051"
+
+volumes:
+  redis-master-data:
+  redis-slave1-data:
+  redis-slave2-data:
+  redis-slave3-data:
+  redis-slave4-data:
+  redis-sentinel1-data:
+  redis-sentinel2-data:
+  redis-sentinel3-data:
+  redisinsight_data:
+
+networks:
+  redis-networks:
+    driver: bridge

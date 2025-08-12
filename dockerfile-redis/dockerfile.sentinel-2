@@ -1,0 +1,3 @@
+FROM redis:7.4.2
+
+COPY config/sentinel-2.conf /data/sentinel.conf
