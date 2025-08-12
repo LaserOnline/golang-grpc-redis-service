@@ -37,7 +37,7 @@ gvm uninstall go1.22.0 ลบ Go เวอร์ชัน 1.22.0 ออกจา
 protoc -I=.proto \
   --go_out=. --go_opt=paths=source_relative \
   --go-grpc_out=. --go-grpc_opt=paths=source_relative \
-  .proto/request.proto
+  .proto/golang-grpc-redis-service.proto
 ```
 
 

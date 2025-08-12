@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.7
 // 	protoc        v5.29.3
-// source: request.proto
+// source: golang-grpc-redis-service.proto
 
 package cachev1
 
@@ -31,7 +31,7 @@ type SetRequest struct {
 
 func (x *SetRequest) Reset() {
 	*x = SetRequest{}
-	mi := &file_request_proto_msgTypes[0]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +43,7 @@ func (x *SetRequest) String() string {
 func (*SetRequest) ProtoMessage() {}
 
 func (x *SetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[0]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +56,7 @@ func (x *SetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetRequest.ProtoReflect.Descriptor instead.
 func (*SetRequest) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{0}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SetRequest) GetKey() string {
@@ -83,7 +83,7 @@ type SetReply struct {
 
 func (x *SetReply) Reset() {
 	*x = SetReply{}
-	mi := &file_request_proto_msgTypes[1]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -95,7 +95,7 @@ func (x *SetReply) String() string {
 func (*SetReply) ProtoMessage() {}
 
 func (x *SetReply) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[1]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -108,7 +108,7 @@ func (x *SetReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetReply.ProtoReflect.Descriptor instead.
 func (*SetReply) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{1}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SetReply) GetStatus() bool {
@@ -134,7 +134,7 @@ type GetRequest struct {
 
 func (x *GetRequest) Reset() {
 	*x = GetRequest{}
-	mi := &file_request_proto_msgTypes[2]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -146,7 +146,7 @@ func (x *GetRequest) String() string {
 func (*GetRequest) ProtoMessage() {}
 
 func (x *GetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[2]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -159,7 +159,7 @@ func (x *GetRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRequest.ProtoReflect.Descriptor instead.
 func (*GetRequest) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{2}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetRequest) GetKey() string {
@@ -178,7 +178,7 @@ type DelRequest struct {
 
 func (x *DelRequest) Reset() {
 	*x = DelRequest{}
-	mi := &file_request_proto_msgTypes[3]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -190,7 +190,7 @@ func (x *DelRequest) String() string {
 func (*DelRequest) ProtoMessage() {}
 
 func (x *DelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[3]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -203,7 +203,7 @@ func (x *DelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DelRequest.ProtoReflect.Descriptor instead.
 func (*DelRequest) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{3}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *DelRequest) GetKey() string {
@@ -223,7 +223,7 @@ type DelReply struct {
 
 func (x *DelReply) Reset() {
 	*x = DelReply{}
-	mi := &file_request_proto_msgTypes[4]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -235,7 +235,7 @@ func (x *DelReply) String() string {
 func (*DelReply) ProtoMessage() {}
 
 func (x *DelReply) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[4]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -248,7 +248,7 @@ func (x *DelReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DelReply.ProtoReflect.Descriptor instead.
 func (*DelReply) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{4}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *DelReply) GetStatus() bool {
@@ -277,7 +277,7 @@ type GetReply struct {
 
 func (x *GetReply) Reset() {
 	*x = GetReply{}
-	mi := &file_request_proto_msgTypes[5]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -289,7 +289,7 @@ func (x *GetReply) String() string {
 func (*GetReply) ProtoMessage() {}
 
 func (x *GetReply) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[5]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -302,7 +302,7 @@ func (x *GetReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReply.ProtoReflect.Descriptor instead.
 func (*GetReply) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{5}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetReply) GetStatus() bool {
@@ -345,7 +345,7 @@ type SetSession struct {
 
 func (x *SetSession) Reset() {
 	*x = SetSession{}
-	mi := &file_request_proto_msgTypes[6]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -357,7 +357,7 @@ func (x *SetSession) String() string {
 func (*SetSession) ProtoMessage() {}
 
 func (x *SetSession) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[6]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -370,7 +370,7 @@ func (x *SetSession) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetSession.ProtoReflect.Descriptor instead.
 func (*SetSession) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{6}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *SetSession) GetKey() string {
@@ -411,7 +411,7 @@ type SetSessionReply struct {
 
 func (x *SetSessionReply) Reset() {
 	*x = SetSessionReply{}
-	mi := &file_request_proto_msgTypes[7]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -423,7 +423,7 @@ func (x *SetSessionReply) String() string {
 func (*SetSessionReply) ProtoMessage() {}
 
 func (x *SetSessionReply) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[7]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -436,7 +436,7 @@ func (x *SetSessionReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SetSessionReply.ProtoReflect.Descriptor instead.
 func (*SetSessionReply) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{7}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *SetSessionReply) GetStatus() bool {
@@ -462,7 +462,7 @@ type GetSessionRequest struct {
 
 func (x *GetSessionRequest) Reset() {
 	*x = GetSessionRequest{}
-	mi := &file_request_proto_msgTypes[8]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -474,7 +474,7 @@ func (x *GetSessionRequest) String() string {
 func (*GetSessionRequest) ProtoMessage() {}
 
 func (x *GetSessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[8]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -487,7 +487,7 @@ func (x *GetSessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSessionRequest.ProtoReflect.Descriptor instead.
 func (*GetSessionRequest) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{8}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetSessionRequest) GetKey() string {
@@ -510,7 +510,7 @@ type GetSessionReply struct {
 
 func (x *GetSessionReply) Reset() {
 	*x = GetSessionReply{}
-	mi := &file_request_proto_msgTypes[9]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -522,7 +522,7 @@ func (x *GetSessionReply) String() string {
 func (*GetSessionReply) ProtoMessage() {}
 
 func (x *GetSessionReply) ProtoReflect() protoreflect.Message {
-	mi := &file_request_proto_msgTypes[9]
+	mi := &file_golang_grpc_redis_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -535,7 +535,7 @@ func (x *GetSessionReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSessionReply.ProtoReflect.Descriptor instead.
 func (*GetSessionReply) Descriptor() ([]byte, []int) {
-	return file_request_proto_rawDescGZIP(), []int{9}
+	return file_golang_grpc_redis_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetSessionReply) GetStatus() bool {
@@ -573,11 +573,11 @@ func (x *GetSessionReply) GetSession() string {
 	return ""
 }
 
-var File_request_proto protoreflect.FileDescriptor
+var File_golang_grpc_redis_service_proto protoreflect.FileDescriptor
 
-const file_request_proto_rawDesc = "" +
+const file_golang_grpc_redis_service_proto_rawDesc = "" +
 	"\n" +
-	"\rrequest.proto\x12\bcache.v1\"4\n" +
+	"\x1fgolang-grpc-redis-service.proto\x12\bcache.v1\"4\n" +
 	"\n" +
 	"SetRequest\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
@@ -625,19 +625,19 @@ const file_request_proto_rawDesc = "" +
 	"\vHgetSession\x12\x1b.cache.v1.GetSessionRequest\x1a\x19.cache.v1.GetSessionReplyB?Z=github.com/auth-service/presentation/grpc/gen/cachev1;cachev1b\x06proto3"
 
 var (
-	file_request_proto_rawDescOnce sync.Once
-	file_request_proto_rawDescData []byte
+	file_golang_grpc_redis_service_proto_rawDescOnce sync.Once
+	file_golang_grpc_redis_service_proto_rawDescData []byte
 )
 
-func file_request_proto_rawDescGZIP() []byte {
-	file_request_proto_rawDescOnce.Do(func() {
-		file_request_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_request_proto_rawDesc), len(file_request_proto_rawDesc)))
+func file_golang_grpc_redis_service_proto_rawDescGZIP() []byte {
+	file_golang_grpc_redis_service_proto_rawDescOnce.Do(func() {
+		file_golang_grpc_redis_service_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_golang_grpc_redis_service_proto_rawDesc), len(file_golang_grpc_redis_service_proto_rawDesc)))
 	})
-	return file_request_proto_rawDescData
+	return file_golang_grpc_redis_service_proto_rawDescData
 }
 
-var file_request_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
-var file_request_proto_goTypes = []any{
+var file_golang_grpc_redis_service_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_golang_grpc_redis_service_proto_goTypes = []any{
 	(*SetRequest)(nil),        // 0: cache.v1.SetRequest
 	(*SetReply)(nil),          // 1: cache.v1.SetReply
 	(*GetRequest)(nil),        // 2: cache.v1.GetRequest
@@ -649,7 +649,7 @@ var file_request_proto_goTypes = []any{
 	(*GetSessionRequest)(nil), // 8: cache.v1.GetSessionRequest
 	(*GetSessionReply)(nil),   // 9: cache.v1.GetSessionReply
 }
-var file_request_proto_depIdxs = []int32{
+var file_golang_grpc_redis_service_proto_depIdxs = []int32{
 	0, // 0: cache.v1.CacheService.SetData:input_type -> cache.v1.SetRequest
 	2, // 1: cache.v1.CacheService.GetData:input_type -> cache.v1.GetRequest
 	3, // 2: cache.v1.CacheService.DelData:input_type -> cache.v1.DelRequest
@@ -667,26 +667,26 @@ var file_request_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_request_proto_init() }
-func file_request_proto_init() {
-	if File_request_proto != nil {
+func init() { file_golang_grpc_redis_service_proto_init() }
+func file_golang_grpc_redis_service_proto_init() {
+	if File_golang_grpc_redis_service_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_request_proto_rawDesc), len(file_request_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_golang_grpc_redis_service_proto_rawDesc), len(file_golang_grpc_redis_service_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_request_proto_goTypes,
-		DependencyIndexes: file_request_proto_depIdxs,
-		MessageInfos:      file_request_proto_msgTypes,
+		GoTypes:           file_golang_grpc_redis_service_proto_goTypes,
+		DependencyIndexes: file_golang_grpc_redis_service_proto_depIdxs,
+		MessageInfos:      file_golang_grpc_redis_service_proto_msgTypes,
 	}.Build()
-	File_request_proto = out.File
-	file_request_proto_goTypes = nil
-	file_request_proto_depIdxs = nil
+	File_golang_grpc_redis_service_proto = out.File
+	file_golang_grpc_redis_service_proto_goTypes = nil
+	file_golang_grpc_redis_service_proto_depIdxs = nil
 }
